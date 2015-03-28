@@ -17,9 +17,7 @@
 @implementation PresentText
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
-    AddText *src = [segue sourceViewController];
-    self.speech = [[SpeechTranscript alloc] init];
-    self.speech.transcript =  src.myTranscript.transcript;
+    
 }
 
 - (void)viewDidLoad {

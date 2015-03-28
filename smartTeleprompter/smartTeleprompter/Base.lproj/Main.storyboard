@@ -41,7 +41,7 @@
                                 <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                                 <state key="normal" title="Go!"/>
                                 <connections>
-                                    <segue destination="dcK-e9-OZ3" kind="modal" id="e6c-Za-XEW"/>
+                                    <segue destination="dcK-e9-OZ3" kind="custom" id="5KL-Gy-mY2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,6 +84,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6yr-UP-yzL"/>
                     <connections>
                         <outlet property="textView" destination="Fh4-HS-rjY" id="Xn7-XK-7qV"/>
                     </connections>

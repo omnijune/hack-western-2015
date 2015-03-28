@@ -8,6 +8,7 @@
 
 #import "AddText.h"
 #import "SpeechTranscript.h"
+#import "PresentText.h"
 
 @interface AddText ()
 
@@ -55,16 +56,19 @@
 //    self.myTranscript.transcript = textView.text;
 }
 
-
-
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if (sender != self.saveText) return;
+    PresentText *dest = [segue destinationViewController];
+    dest.speech = [[SpeechTranscript alloc] init];
     self.myTranscript = [[SpeechTranscript alloc] init];
     self.myTranscript.transcript = self.textView.text;
+    dest.speech.transcript = self.myTranscript.transcript;
+    
+    NSLog(@"%@",self.myTranscript.transcript);
+    NSLog(@"%@",dest.speech.transcript);
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
