@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D429C8871AC6C0BE003D45EF /* AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C8861AC6C0BE003D45EF /* AddText.m */; };
+		D429C88A1AC6C0F2003D45EF /* PresentText.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C8891AC6C0F2003D45EF /* PresentText.m */; };
 		E204EF6B1AC68204001AB4C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E204EF6A1AC68204001AB4C4 /* main.m */; };
 		E204EF6E1AC68204001AB4C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E204EF6D1AC68204001AB4C4 /* AppDelegate.m */; };
 		E204EF711AC68204001AB4C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E204EF701AC68204001AB4C4 /* ViewController.m */; };
@@ -28,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D429C8851AC6C0BE003D45EF /* AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddText.h; sourceTree = "<group>"; };
+		D429C8861AC6C0BE003D45EF /* AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddText.m; sourceTree = "<group>"; };
+		D429C8881AC6C0F2003D45EF /* PresentText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentText.h; sourceTree = "<group>"; };
+		D429C8891AC6C0F2003D45EF /* PresentText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentText.m; sourceTree = "<group>"; };
 		E204EF651AC68203001AB4C4 /* smartTeleprompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartTeleprompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E204EF691AC68204001AB4C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E204EF6A1AC68204001AB4C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -88,6 +94,10 @@
 				E204EF6D1AC68204001AB4C4 /* AppDelegate.m */,
 				E204EF6F1AC68204001AB4C4 /* ViewController.h */,
 				E204EF701AC68204001AB4C4 /* ViewController.m */,
+				D429C8851AC6C0BE003D45EF /* AddText.h */,
+				D429C8861AC6C0BE003D45EF /* AddText.m */,
+				D429C8881AC6C0F2003D45EF /* PresentText.h */,
+				D429C8891AC6C0F2003D45EF /* PresentText.m */,
 				E204EF901AC68CFF001AB4C4 /* SpeechTranscript.h */,
 				E204EF911AC68CFF001AB4C4 /* SpeechTranscript.m */,
 				E204EF721AC68204001AB4C4 /* Main.storyboard */,
@@ -224,9 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D429C8871AC6C0BE003D45EF /* AddText.m in Sources */,
 				E204EF711AC68204001AB4C4 /* ViewController.m in Sources */,
 				E204EF6E1AC68204001AB4C4 /* AppDelegate.m in Sources */,
 				E204EF6B1AC68204001AB4C4 /* main.m in Sources */,
+				D429C88A1AC6C0F2003D45EF /* PresentText.m in Sources */,
 				E204EF921AC68CFF001AB4C4 /* SpeechTranscript.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

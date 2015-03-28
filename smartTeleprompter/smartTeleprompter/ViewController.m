@@ -16,14 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.myTranscript = [[SpeechTranscript alloc] init];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //    self.myTranscript = [[SpeechTranscript alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (void) insertString: (NSString *) insertingString intoTextView: (UITextView *) textView
 {
@@ -41,6 +43,7 @@
     textView.scrollEnabled = YES;  // turn scrolling back on.
     self.myTranscript.transcript = textView.text;
 }
+
 
 
 @end
