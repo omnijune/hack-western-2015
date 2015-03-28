@@ -1,87 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Add Text-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AddText" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-c3-93D">
-                                <rect key="frame" x="101" y="529" width="398" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fOp-c3-93D">
+                                <rect key="frame" x="101" y="497" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                                 <state key="normal" title="Go!"/>
                                 <connections>
                                     <action selector="saveText:" destination="dkx-z0-nzr" eventType="touchUpInside" id="eRw-L8-fM2"/>
-                                    <segue destination="dcK-e9-OZ3" kind="show" id="e6c-Za-XEW"/>
+                                    <segue destination="dcK-e9-OZ3" kind="modal" id="e6c-Za-XEW"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Welcome to Live Prompt!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Yg-2z-ObS">
-                                <rect key="frame" x="16" y="53" width="568" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paste your speech below..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeW-ob-I1S">
-                                <rect key="frame" x="16" y="110" width="568" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paste your speech below..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GeW-ob-I1S">
+                                <rect key="frame" x="16" y="110" width="288" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="eor-Y5-nGW">
-                                <rect key="frame" x="41" y="160" width="518" height="340"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" id="eor-Y5-nGW">
+                                <rect key="frame" x="41" y="160" width="238" height="340"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Welcome to Live Prompt!" textAlignment="center" minimumFontSize="17" id="4Yg-2z-ObS">
+                                <rect key="frame" x="16" y="53" width="288" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="fOp-c3-93D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="85" id="3PD-sB-VLs"/>
-                            <constraint firstItem="eor-Y5-nGW" firstAttribute="top" secondItem="GeW-ob-I1S" secondAttribute="bottom" constant="30" id="G5a-vG-nw0"/>
-                            <constraint firstItem="GeW-ob-I1S" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NQy-K4-KGp"/>
-                            <constraint firstItem="GeW-ob-I1S" firstAttribute="top" secondItem="4Yg-2z-ObS" secondAttribute="bottom" constant="30" id="Qdc-c4-6Zb"/>
-                            <constraint firstItem="4Yg-2z-ObS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="R2e-pD-BZw"/>
-                            <constraint firstAttribute="centerX" secondItem="GeW-ob-I1S" secondAttribute="centerX" id="SoA-YX-5JK"/>
-                            <constraint firstItem="4Yg-2z-ObS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YEM-j4-DJO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eor-Y5-nGW" secondAttribute="trailing" constant="25" id="bzf-C8-jXf"/>
-                            <constraint firstItem="eor-Y5-nGW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="gZx-FZ-Tgb"/>
-                            <constraint firstItem="4Yg-2z-ObS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="glf-Ma-3Gv"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fOp-c3-93D" secondAttribute="bottom" constant="41" id="gmF-fJ-r74"/>
-                            <constraint firstAttribute="centerX" secondItem="4Yg-2z-ObS" secondAttribute="centerX" id="rk1-tQ-t0l"/>
-                            <constraint firstItem="fOp-c3-93D" firstAttribute="top" secondItem="eor-Y5-nGW" secondAttribute="bottom" constant="30" id="w3P-YD-MsF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fOp-c3-93D" secondAttribute="trailing" constant="85" id="xEf-Gf-7Tk"/>
-                            <constraint firstItem="GeW-ob-I1S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xWx-FQ-08j"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="337"/>
+            <point key="canvasLocation" x="996.79999999999995" y="319.02666666666664"/>
         </scene>
         <!--Present Text-->
         <scene sceneID="Ggo-er-E2d">
             <objects>
-                <viewController id="dcK-e9-OZ3" customClass="PresentText" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GzE-hV-irj"/>
-                        <viewControllerLayoutGuide type="bottom" id="NtK-jF-WL4"/>
-                    </layoutGuides>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="dcK-e9-OZ3" customClass="PresentText" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q37-jf-56F">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFm-F9-IvP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hFm-F9-IvP">
                                 <rect key="frame" x="16" y="20" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -89,42 +71,36 @@
                                     <segue destination="Wt4-it-aGI" kind="unwind" unwindAction="unwindToAdd:" id="wvx-Au-FGa"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NdS-Wv-oyI">
-                                <rect key="frame" x="0.0" y="46" width="600" height="562"/>
-                                <subviews>
-                                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2K-cG-oRI">
-                                        <rect key="frame" x="61" y="0.0" width="479" height="546"/>
-                                        <string key="text">;a;nfaklnkdfnaksndf 
-;ajdf;a;sdf;asd;fadf
-;akdjfasdjf;lasd;lfma;c;asdf
-;alsdjf;a
-;skdfjng
-a
-asdfadf
-asdfasdfasdfafd
-asdfasdfadsf
-asdfasdfa</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="47"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
-                            </scrollView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Fh4-HS-rjY">
+                                <rect key="frame" x="16" y="43" width="282" height="484"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac risus quis quam elementum auctor non ac elit. Nam tincidunt venenatis nisl, non euismod libero ornare ut. Curabitur tristique lacus felis, eu aliquam sem rutrum vitae. Sed vel tellus varius, interdum velit id, ullamcorper libero. Vivamus sed orci tempor, molestie purus eu, fermentum sem. Pellentesque id eleifend lorem. Morbi rhoncus, eros ornare faucibus sodales, turpis nulla rutrum massa, eget sagittis augue erat vitae massa. Sed vel nunc nec magna vehicula feugiat eget at elit. Suspendisse nec libero orci. Maecenas felis nibh, interdum sed dolor ut, vestibulum egestas massa. Vestibulum iaculis nibh nec purus lobortis, a imperdiet metus molestie.
+
+Nullam et accumsan justo. Suspendisse potenti. Curabitur eget ultricies libero. Aenean ultrices vitae diam at commodo. Sed eget posuere risus. In hac habitasse platea dictumst. Mauris a nisi et est pulvinar commodo non quis lacus. Donec vel aliquam neque. Vivamus dignissim dictum risus, in molestie quam commodo eget. Aliquam erat volutpat. Aliquam finibus posuere ligula, vel cursus dolor volutpat a. Fusce felis eros, feugiat in pulvinar eget, consequat vel erat. Pellentesque ante felis, ullamcorper vel maximus condimentum, malesuada non dui. Nam et sem pretium, sollicitudin tortor eu, tincidunt diam. Maecenas sollicitudin convallis nisl vitae lacinia. Integer vitae eleifend odio.
+
+Cras tincidunt odio sit amet velit euismod condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce a rutrum justo. Maecenas auctor quam at turpis cursus, id accumsan velit ullamcorper. Mauris et elit libero. Maecenas auctor mauris augue. Curabitur dictum feugiat nunc eu ornare. Aenean a orci orci. Donec pulvinar velit nunc, vitae hendrerit mauris malesuada in. Nam laoreet, sapien at condimentum accumsan, augue enim fringilla lectus, et venenatis metus augue eget lectus. Vestibulum sit amet rutrum libero. Pellentesque ullamcorper convallis aliquet. Cras iaculis pharetra hendrerit. Suspendisse condimentum feugiat lorem pharetra ornare.
+
+Duis in nunc iaculis, faucibus risus at, posuere urna. Donec in eros ullamcorper ipsum vehicula tempor. Vestibulum sed arcu a felis malesuada gravida. Nam vitae blandit orci. Donec odio massa, gravida eget est sed, efficitur vestibulum nisl. Suspendisse in lacus metus. Ut quis orci nec purus consequat dictum nec eu sapien. Nunc id convallis sem, at sagittis nulla.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="NdS-Wv-oyI" firstAttribute="top" secondItem="GzE-hV-irj" secondAttribute="bottom" constant="26" id="252-63-U8h"/>
-                            <constraint firstItem="NdS-Wv-oyI" firstAttribute="leading" secondItem="q37-jf-56F" secondAttribute="leadingMargin" constant="-16" id="4NH-1d-zCe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NdS-Wv-oyI" secondAttribute="trailing" constant="-16" id="WI1-UD-Lid"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="NdS-Wv-oyI" secondAttribute="bottom" constant="-8" id="xYA-5V-oyi"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="Fh4-HS-rjY" id="Xn7-XK-7qV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heJ-LY-0o5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Wt4-it-aGI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2539" y="337"/>
+            <point key="canvasLocation" x="1354" y="319"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

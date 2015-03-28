@@ -16,19 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CGPoint bottomOffset = CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
-    [self.scrollView setContentOffset:bottomOffset animated:NO];
+    
+    //self.speechTranscriptBig.text = [NSString stringWithFormat: @"%d", 0]; //GET TEXT VALUE 
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+-(void) slowScrollText{
+    if(self.counter<=self.bottom){
+        [self.textView setContentOffset:CGPointMake(0,self.counter) animated:NO];
+        self.counter+=5;
+        [self performSelector:@selector(slowScrollText) withObject:nil afterDelay:.1];
+    }
+}
+
+-(void) viewDidAppear:(BOOL) animated {
     [super viewDidAppear:animated];
-    
-    float scrollDuration = 4.0;
-    
-    [UIView animateWithDuration:scrollDuration animations:^{
-        self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, 0);
-    }];
+    self.bottom =[self.textView contentSize].height+200;
+
+    [self slowScrollText];
 }
 
 - (void)didReceiveMemoryWarning {
