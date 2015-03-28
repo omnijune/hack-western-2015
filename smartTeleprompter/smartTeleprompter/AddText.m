@@ -7,12 +7,13 @@
 //
 
 #import "AddText.h"
+#import "SpeechTranscript.h"
 
 @interface AddText ()
 
 // MY CODE
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-- (IBAction)saveText:(id)sender;
+- (IBAction)saveText:(NSString *) insertingString intoTextView: (UITextView *) textView;
 
 
 @end
@@ -21,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.myTranscript = [[SpeechTranscript alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,6 +34,24 @@
 - (IBAction)unwindToAdd:(UIStoryboardSegue *)segue {
     
 }
+
+- (IBAction)saveText : (NSString *) insertingString intoTextView: (UITextView *) textView
+{
+    NSRange range = textView.selectedRange;
+    NSString * firstHalfString = [textView.text substringToIndex:range.location];
+    NSString * secondHalfString = [textView.text substringFromIndex: range.location];
+    textView.scrollEnabled = NO;  // turn off scrolling or you'll get dizzy ... I promise
+    
+    textView.text = [NSString stringWithFormat: @"%@%@%@",
+                     firstHalfString,
+                     insertingString,
+                     secondHalfString];
+    range.location += [insertingString length];
+    textView.selectedRange = range;
+    textView.scrollEnabled = YES;  // turn scrolling back on.
+    self.myTranscript.transcript = textView.text;
+}
+
 
 
 /*

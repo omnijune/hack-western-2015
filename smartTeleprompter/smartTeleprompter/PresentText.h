@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PresentText : UIViewController
-
+@property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
+//@property (nonatomic, retain) IBAction UILabel* label;
 @end

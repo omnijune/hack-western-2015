@@ -10,9 +10,6 @@
 #import "SpeechTranscript.h"
 
 @interface ViewController : UIViewController
-
-@property (nonatomic, weak) IBOutlet UITextField *nameField;
-
 @property (nonatomic) SpeechTranscript* myTranscript;
 
 //start function

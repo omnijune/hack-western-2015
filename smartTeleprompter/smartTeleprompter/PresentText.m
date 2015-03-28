@@ -16,7 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    CGPoint bottomOffset = CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
+    [self.scrollView setContentOffset:bottomOffset animated:NO];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    float scrollDuration = 4.0;
+    
+    [UIView animateWithDuration:scrollDuration animations:^{
+        self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, 0);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +45,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 @end

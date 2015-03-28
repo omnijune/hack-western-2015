@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SpeechTranscript.h"
 
 @interface AddText : UIViewController
-
+@property (nonatomic) SpeechTranscript* myTranscript;
 // MY CODE
 - (IBAction)unwindToAdd:(UIStoryboardSegue *)segue;
 
