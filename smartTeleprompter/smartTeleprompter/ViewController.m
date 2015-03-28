@@ -25,11 +25,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)textViewDidEndEditing:(UITextView *)textView {
-    NSString *theText = textView.text;
-    if (![theText isEqualToString:@""]) {
-        self.myTranscript.transcript = theText;
-    }
+- (void) insertString: (NSString *) insertingString intoTextView: (UITextView *) textView
+{
+    NSRange range = textView.selectedRange;
+    NSString * firstHalfString = [textView.text substringToIndex:range.location];
+    NSString * secondHalfString = [textView.text substringFromIndex: range.location];
+    textView.scrollEnabled = NO;  // turn off scrolling or you'll get dizzy ... I promise
+    
+    textView.text = [NSString stringWithFormat: @"%@%@%@",
+                     firstHalfString,
+                     insertingString,
+                     secondHalfString];
+    range.location += [insertingString length];
+    textView.selectedRange = range;
+    textView.scrollEnabled = YES;  // turn scrolling back on.
+    self.myTranscript.transcript = textView.text;
 }
+
 
 @end

@@ -13,7 +13,7 @@
 
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 
-@property SpeechTranscript* myTranscript;
+@property (nonatomic) SpeechTranscript* myTranscript;
 
 //start function
 //get text input from view
