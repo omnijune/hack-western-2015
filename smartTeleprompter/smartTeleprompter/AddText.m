@@ -36,25 +36,7 @@
 }
 
 - (void)saveText: (UITextView *) textView
-{
-    
-//    NSString *theText = textView.text;
-//    self.myTranscript.transcript = theText;
-//    NSLog(self.myTranscript.transcript);
-//    NSRange range = textView.selectedRange;
-//    NSString * firstHalfString = [textView.text substringToIndex:range.location];
-//    NSString * secondHalfString = [textView.text substringFromIndex: range.location];
-//    textView.scrollEnabled = NO;  // turn off scrolling or you'll get dizzy ... I promise
-//    
-//    textView.text = [NSString stringWithFormat: @"%@%@%@",
-//                     firstHalfString,
-//                     insertingString,
-//                     secondHalfString];
-//    range.location += [insertingString length];
-//    textView.selectedRange = range;
-//    textView.scrollEnabled = YES;  // turn scrolling back on.
-//    self.myTranscript.transcript = textView.text;
-}
+{}
 
 #pragma mark - Navigation
 
@@ -63,9 +45,7 @@
     if (sender != self.saveText) return;
     PresentText *dest = [segue destinationViewController];
     dest.speech = [[SpeechTranscript alloc] init];
-    self.myTranscript = [[SpeechTranscript alloc] init];
-    self.myTranscript.transcript = self.textView.text;
-    dest.speech.transcript = self.myTranscript.transcript;
+    dest.speech.transcript = self.textView.text;
     
     NSLog(@"%@",self.myTranscript.transcript);
     NSLog(@"%@",dest.speech.transcript);

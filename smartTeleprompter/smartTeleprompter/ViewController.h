@@ -10,7 +10,6 @@
 #import "SpeechTranscript.h"
 
 @interface ViewController : UIViewController
-@property (nonatomic) SpeechTranscript* myTranscript;
 
 //start function
 //get text input from view
