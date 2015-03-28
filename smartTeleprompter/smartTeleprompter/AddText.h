@@ -15,4 +15,5 @@
 - (IBAction)unwindToAdd:(UIStoryboardSegue *)segue;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIButton *saveText;
+- (IBAction)Clear:(UIButton *)sender;
 @end

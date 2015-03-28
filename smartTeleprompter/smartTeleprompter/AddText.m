@@ -10,7 +10,7 @@
 #import "SpeechTranscript.h"
 #import "PresentText.h"
 
-@interface AddText ()
+@interface AddText ()<UITextViewDelegate>
 
 // MY CODE
 
@@ -22,6 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.textView.layer.borderWidth = 1.0f;
+    self.textView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.textView.layer.cornerRadius = 8;
+    self.textView.textContainerInset = UIEdgeInsetsMake(7, 5, 7, 5);
+    self.textView.delegate = self;
+    self.textView.text = @"Paste your speech here.";
+    self.textView.textColor = [UIColor lightGrayColor];
     
 }
 
@@ -37,6 +44,26 @@
 
 - (void)saveText: (UITextView *) textView
 {}
+
+// for the placeholder text for UItextview
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"Paste your speech here."]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"Paste your speech here.";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
+}
 
 #pragma mark - Navigation
 
@@ -54,4 +81,7 @@
 }
 
 
+- (IBAction)Clear:(UIButton *)sender {
+    self.textView.text=@"";
+}
 @end
