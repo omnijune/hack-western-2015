@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SpeechTranscript.h"
 
 @interface ViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
+
+@property SpeechTranscript* myTranscript;
 
 //start function
 //get text input from view
 
 
 @end
-

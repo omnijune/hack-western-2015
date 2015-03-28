@@ -10,7 +10,6 @@
 #import "SpeechTranscript.h"
 
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
