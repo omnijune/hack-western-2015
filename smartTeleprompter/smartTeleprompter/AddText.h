@@ -13,5 +13,6 @@
 @property (nonatomic) SpeechTranscript* myTranscript;
 // MY CODE
 - (IBAction)unwindToAdd:(UIStoryboardSegue *)segue;
-
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIButton *saveText;
 @end

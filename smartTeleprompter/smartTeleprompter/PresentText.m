@@ -7,6 +7,8 @@
 //
 
 #import "PresentText.h"
+#import "AddText.h"
+
 
 @interface PresentText ()
 
@@ -14,10 +16,15 @@
 
 @implementation PresentText
 
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue {
+    AddText *src = [segue sourceViewController];
+    self.speech = [[SpeechTranscript alloc] init];
+    self.speech.transcript =  src.myTranscript.transcript;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //self.speechTranscriptBig.text = [NSString stringWithFormat: @"%d", 0]; //GET TEXT VALUE 
+    self.textView.text = self.speech.transcript;
 }
 
 -(void) slowScrollText{
@@ -27,6 +34,8 @@
         [self performSelector:@selector(slowScrollText) withObject:nil afterDelay:.1];
     }
 }
+
+
 
 -(void) viewDidAppear:(BOOL) animated {
     [super viewDidAppear:animated];

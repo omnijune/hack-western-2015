@@ -12,16 +12,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fOp-c3-93D">
-                                <rect key="frame" x="101" y="497" width="118" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Welcome to Live Prompt!" textAlignment="center" minimumFontSize="17" id="4Yg-2z-ObS">
+                                <rect key="frame" x="16" y="53" width="288" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
-                                <state key="normal" title="Go!"/>
-                                <connections>
-                                    <action selector="saveText:" destination="dkx-z0-nzr" eventType="touchUpInside" id="eRw-L8-fM2"/>
-                                    <segue destination="dcK-e9-OZ3" kind="modal" id="e6c-Za-XEW"/>
-                                </connections>
-                            </button>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paste your speech below..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GeW-ob-I1S">
                                 <rect key="frame" x="16" y="110" width="288" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -36,18 +35,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Welcome to Live Prompt!" textAlignment="center" minimumFontSize="17" id="4Yg-2z-ObS">
-                                <rect key="frame" x="16" y="53" width="288" height="27"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fOp-c3-93D">
+                                <rect key="frame" x="101" y="518" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+                                <state key="normal" title="Go!"/>
+                                <connections>
+                                    <segue destination="dcK-e9-OZ3" kind="modal" id="e6c-Za-XEW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="saveText" destination="fOp-c3-93D" id="6B8-AY-Rj8"/>
+                        <outlet property="textView" destination="eor-Y5-nGW" id="Mr9-2i-fxK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,13 +78,6 @@
                                 <rect key="frame" x="16" y="43" width="282" height="484"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac risus quis quam elementum auctor non ac elit. Nam tincidunt venenatis nisl, non euismod libero ornare ut. Curabitur tristique lacus felis, eu aliquam sem rutrum vitae. Sed vel tellus varius, interdum velit id, ullamcorper libero. Vivamus sed orci tempor, molestie purus eu, fermentum sem. Pellentesque id eleifend lorem. Morbi rhoncus, eros ornare faucibus sodales, turpis nulla rutrum massa, eget sagittis augue erat vitae massa. Sed vel nunc nec magna vehicula feugiat eget at elit. Suspendisse nec libero orci. Maecenas felis nibh, interdum sed dolor ut, vestibulum egestas massa. Vestibulum iaculis nibh nec purus lobortis, a imperdiet metus molestie.
-
-Nullam et accumsan justo. Suspendisse potenti. Curabitur eget ultricies libero. Aenean ultrices vitae diam at commodo. Sed eget posuere risus. In hac habitasse platea dictumst. Mauris a nisi et est pulvinar commodo non quis lacus. Donec vel aliquam neque. Vivamus dignissim dictum risus, in molestie quam commodo eget. Aliquam erat volutpat. Aliquam finibus posuere ligula, vel cursus dolor volutpat a. Fusce felis eros, feugiat in pulvinar eget, consequat vel erat. Pellentesque ante felis, ullamcorper vel maximus condimentum, malesuada non dui. Nam et sem pretium, sollicitudin tortor eu, tincidunt diam. Maecenas sollicitudin convallis nisl vitae lacinia. Integer vitae eleifend odio.
-
-Cras tincidunt odio sit amet velit euismod condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce a rutrum justo. Maecenas auctor quam at turpis cursus, id accumsan velit ullamcorper. Mauris et elit libero. Maecenas auctor mauris augue. Curabitur dictum feugiat nunc eu ornare. Aenean a orci orci. Donec pulvinar velit nunc, vitae hendrerit mauris malesuada in. Nam laoreet, sapien at condimentum accumsan, augue enim fringilla lectus, et venenatis metus augue eget lectus. Vestibulum sit amet rutrum libero. Pellentesque ullamcorper convallis aliquet. Cras iaculis pharetra hendrerit. Suspendisse condimentum feugiat lorem pharetra ornare.
-
-Duis in nunc iaculis, faucibus risus at, posuere urna. Donec in eros ullamcorper ipsum vehicula tempor. Vestibulum sed arcu a felis malesuada gravida. Nam vitae blandit orci. Donec odio massa, gravida eget est sed, efficitur vestibulum nisl. Suspendisse in lacus metus. Ut quis orci nec purus consequat dictum nec eu sapien. Nunc id convallis sem, at sagittis nulla.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

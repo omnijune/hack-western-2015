@@ -12,8 +12,7 @@
 @interface AddText ()
 
 // MY CODE
-@property (weak, nonatomic) IBOutlet UITextView *textView;
-- (IBAction)saveText:(NSString *) insertingString intoTextView: (UITextView *) textView;
+
 
 
 @end
@@ -22,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.myTranscript = [[SpeechTranscript alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,33 +34,40 @@
     
 }
 
-- (IBAction)saveText : (NSString *) insertingString intoTextView: (UITextView *) textView
+- (void)saveText: (UITextView *) textView
 {
-    NSRange range = textView.selectedRange;
-    NSString * firstHalfString = [textView.text substringToIndex:range.location];
-    NSString * secondHalfString = [textView.text substringFromIndex: range.location];
-    textView.scrollEnabled = NO;  // turn off scrolling or you'll get dizzy ... I promise
     
-    textView.text = [NSString stringWithFormat: @"%@%@%@",
-                     firstHalfString,
-                     insertingString,
-                     secondHalfString];
-    range.location += [insertingString length];
-    textView.selectedRange = range;
-    textView.scrollEnabled = YES;  // turn scrolling back on.
-    self.myTranscript.transcript = textView.text;
+//    NSString *theText = textView.text;
+//    self.myTranscript.transcript = theText;
+//    NSLog(self.myTranscript.transcript);
+//    NSRange range = textView.selectedRange;
+//    NSString * firstHalfString = [textView.text substringToIndex:range.location];
+//    NSString * secondHalfString = [textView.text substringFromIndex: range.location];
+//    textView.scrollEnabled = NO;  // turn off scrolling or you'll get dizzy ... I promise
+//    
+//    textView.text = [NSString stringWithFormat: @"%@%@%@",
+//                     firstHalfString,
+//                     insertingString,
+//                     secondHalfString];
+//    range.location += [insertingString length];
+//    textView.selectedRange = range;
+//    textView.scrollEnabled = YES;  // turn scrolling back on.
+//    self.myTranscript.transcript = textView.text;
 }
 
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (sender != self.saveText) return;
+    self.myTranscript = [[SpeechTranscript alloc] init];
+    self.myTranscript.transcript = self.textView.text;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
