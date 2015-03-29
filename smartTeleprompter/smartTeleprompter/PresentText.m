@@ -56,18 +56,12 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
             [self.textView setContentOffset:CGPointMake(0,self.counter) animated:NO];
             self.counter+=self.counterIncrement;
         }
-        [self performSelector:@selector(slowScrollText) withObject:nil afterDelay:.12];
+        [self performSelector:@selector(slowScrollText) withObject:nil afterDelay:.20];
     }
 }
 
 -(void) makeTextBlock{
     NSRange stringR;
-<<<<<<< HEAD
-//    if(self.blockEndIndex == [self.highlightBlock length]-1){
-//        return;
-//    }
-=======
->>>>>>> highlighting text works!
     [self.highlightBlock beginEditing];
     if(self.highlightOccurrence != 0){
         stringR =  NSMakeRange(self.blockBeginIndex, self.blockEndIndex - self.blockBeginIndex + 1);
@@ -115,24 +109,14 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 }
 
 -(IBAction)Start:(id)sender{
-<<<<<<< HEAD
-    if (paused == true){
-        Timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(TimerCount) userInfo:nil repeats:YES];
-        [self slowScrollText];}
-    else{
-        [Timer invalidate];
-        paused = true;
-    }
-=======
     if (paused == true) {
 //        paused = false;
         Timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(TimerCount) userInfo:nil repeats:YES];
-        [self slowScrollText];
+
         [self startListening];
     } else {
         [Timer invalidate];
         paused = true;
->>>>>>> highlighting text works!
     }
     
 }
@@ -197,6 +181,7 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
             NSLog(@"substring match");
             [self makeTextBlock];
         }
+        [self slowScrollText];
     }
     
     self.PlayButton.selected = !self.PlayButton.isSelected;
