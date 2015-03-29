@@ -13,8 +13,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-//- (void)updateCurrentLocation;
-//- (void)stopUpdatingCurrentLocation;
 - (void)setupSpeechKitConnection;
 
 

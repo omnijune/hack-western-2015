@@ -10,11 +10,10 @@
 		CA55F26E1AC79E8800314248 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CA55F26D1AC79E8800314248 /* play.png */; };
 		D429C8871AC6C0BE003D45EF /* AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C8861AC6C0BE003D45EF /* AddText.m */; };
 		D429C88A1AC6C0F2003D45EF /* PresentText.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C8891AC6C0F2003D45EF /* PresentText.m */; };
+		D4A2E2F61AC7E77F00489F0C /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A2E2F51AC7E77F00489F0C /* SpeechKit.framework */; };
 		D4B3C0D01AC7748D00C7A1A7 /* earcon_cancel.wav in Resources */ = {isa = PBXBuildFile; fileRef = D4B3C0CD1AC7748D00C7A1A7 /* earcon_cancel.wav */; };
 		D4B3C0D11AC7748D00C7A1A7 /* earcon_done_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = D4B3C0CE1AC7748D00C7A1A7 /* earcon_done_listening.wav */; };
 		D4B3C0D21AC7748D00C7A1A7 /* earcon_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = D4B3C0CF1AC7748D00C7A1A7 /* earcon_listening.wav */; };
-		D4B3C0D61AC7B6A700C7A1A7 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B3C0D51AC7B6A700C7A1A7 /* SpeechKit.framework */; };
-		D4B3C0D71AC7B6E300C7A1A7 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B3C0D51AC7B6A700C7A1A7 /* SpeechKit.framework */; };
 		D4B3C0D91AC7B7C800C7A1A7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B3C0D81AC7B7C800C7A1A7 /* CFNetwork.framework */; };
 		D4B3C0DB1AC7B7D400C7A1A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B3C0DA1AC7B7D400C7A1A7 /* SystemConfiguration.framework */; };
 		D4B3C0DD1AC7B7E500C7A1A7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B3C0DC1AC7B7E500C7A1A7 /* Security.framework */; };
@@ -43,15 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CA55F26D1AC79E8800314248 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = ../../../Desktop/play.png; sourceTree = "<group>"; };
+		CA55F26D1AC79E8800314248 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = "/Users/Flora/hack-western-2015/smartTeleprompter/smartTeleprompter/play.png"; sourceTree = "<absolute>"; };
 		D429C8851AC6C0BE003D45EF /* AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddText.h; sourceTree = "<group>"; };
 		D429C8861AC6C0BE003D45EF /* AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddText.m; sourceTree = "<group>"; };
 		D429C8881AC6C0F2003D45EF /* PresentText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentText.h; sourceTree = "<group>"; };
 		D429C8891AC6C0F2003D45EF /* PresentText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentText.m; sourceTree = "<group>"; };
+		D4A2E2F51AC7E77F00489F0C /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechKit.framework; path = ../DragonMobileSDK_1.4.14/SpeechKit.framework; sourceTree = "<group>"; };
 		D4B3C0CD1AC7748D00C7A1A7 /* earcon_cancel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_cancel.wav; sourceTree = "<group>"; };
 		D4B3C0CE1AC7748D00C7A1A7 /* earcon_done_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_done_listening.wav; sourceTree = "<group>"; };
 		D4B3C0CF1AC7748D00C7A1A7 /* earcon_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_listening.wav; sourceTree = "<group>"; };
-		D4B3C0D51AC7B6A700C7A1A7 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechKit.framework; path = "../../Downloads/DragonMobileSDK_1.4.14 2/SpeechKit.framework"; sourceTree = "<group>"; };
 		D4B3C0D81AC7B7C800C7A1A7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D4B3C0DA1AC7B7D400C7A1A7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D4B3C0DC1AC7B7E500C7A1A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -82,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A2E2F61AC7E77F00489F0C /* SpeechKit.framework in Frameworks */,
 				D4B3C0E51AC7B84800C7A1A7 /* AudioToolbox.framework in Frameworks */,
 				D4B3C0E31AC7B83800C7A1A7 /* CoreGraphics.framework in Frameworks */,
 				D4B3C0E11AC7B83000C7A1A7 /* Foundation.framework in Frameworks */,
@@ -89,7 +89,6 @@
 				D4B3C0DD1AC7B7E500C7A1A7 /* Security.framework in Frameworks */,
 				D4B3C0DB1AC7B7D400C7A1A7 /* SystemConfiguration.framework in Frameworks */,
 				D4B3C0D91AC7B7C800C7A1A7 /* CFNetwork.framework in Frameworks */,
-				D4B3C0D61AC7B6A700C7A1A7 /* SpeechKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4B3C0D71AC7B6E300C7A1A7 /* SpeechKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +105,7 @@
 		E204EF5C1AC68203001AB4C4 = {
 			isa = PBXGroup;
 			children = (
+				D4A2E2F51AC7E77F00489F0C /* SpeechKit.framework */,
 				D4B3C0E61AC7B86E00C7A1A7 /* AVKit.framework */,
 				D4B3C0E41AC7B84800C7A1A7 /* AudioToolbox.framework */,
 				D4B3C0E21AC7B83800C7A1A7 /* CoreGraphics.framework */,
@@ -115,7 +114,6 @@
 				D4B3C0DC1AC7B7E500C7A1A7 /* Security.framework */,
 				D4B3C0DA1AC7B7D400C7A1A7 /* SystemConfiguration.framework */,
 				D4B3C0D81AC7B7C800C7A1A7 /* CFNetwork.framework */,
-				D4B3C0D51AC7B6A700C7A1A7 /* SpeechKit.framework */,
 				E204EF671AC68203001AB4C4 /* smartTeleprompter */,
 				E204EF811AC68204001AB4C4 /* smartTeleprompterTests */,
 				E204EF661AC68203001AB4C4 /* Products */,
@@ -415,13 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/Flora/Downloads/DragonMobileSDK_1.4.14,
-					/Users/Flora/Downloads/DragonMobileSDK_1.4.14/DragonMobileRecognizer,
-					/Users/Flora/Downloads/DragonMobileSDK_1.4.14,
-					2,
-				);
+				FRAMEWORK_SEARCH_PATHS = "/Users/Flora/hack-western-2015/DragonMobileSDK_1.4.14";
 				INFOPLIST_FILE = smartTeleprompter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,13 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/Flora/Downloads/DragonMobileSDK_1.4.14,
-					/Users/Flora/Downloads/DragonMobileSDK_1.4.14/DragonMobileRecognizer,
-					/Users/Flora/Downloads/DragonMobileSDK_1.4.14,
-					2,
-				);
+				FRAMEWORK_SEARCH_PATHS = "/Users/Flora/hack-western-2015/DragonMobileSDK_1.4.14";
 				INFOPLIST_FILE = smartTeleprompter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

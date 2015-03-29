@@ -9,9 +9,7 @@
 #import "AddText.h"
 #import "SpeechTranscript.h"
 #import "PresentText.h"
-//#import "AppDelegate.h"
-//#import <AVFoundation/AVAudioPlayer.h>
-//#import <AudioToolbox/AudioToolbox.h>
+
 
 @interface AddText () <UITextViewDelegate>
 

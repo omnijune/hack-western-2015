@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "SpeechTranscript.h"
-//#import "AppDelegate.h"
 
 @interface AddText : UIViewController
 

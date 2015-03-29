@@ -22,7 +22,7 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 
 @implementation PresentText
 
--(void)TimerCount{
+- (void)TimerCount{
     paused = false;
     countNumber = countNumber +1;
     TimerDisplay.text = [NSString stringWithFormat:@"%i", countNumber];
@@ -37,9 +37,8 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
     self.textView.text = self.speech.transcript;
     NSLog(@"%@", self.speech.transcript);
     self.appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    [self.appDelegate updateCurrentLocation];
     [self.appDelegate setupSpeechKitConnection];
-    
+    paused = true;
     self.spokenText.returnKeyType = UIReturnKeySearch;
 }
 
@@ -51,7 +50,7 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
     }
 }
 
--(IBAction)Start:(id)sender{
+- (IBAction)Start:(id)sender{
     if (paused == true){
         NSLog(@"alsfjasdjfaldfjas");
         Timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(TimerCount) userInfo:nil repeats:YES];}
@@ -62,7 +61,7 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 }
 
 
--(void) viewDidAppear:(BOOL) animated {
+- (void) viewDidAppear:(BOOL) animated {
     [super viewDidAppear:animated];
     self.bottom =[self.textView contentSize].height+200;
 
@@ -107,11 +106,11 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 }
 
 - (void)recognizerDidBeginRecording:(SKRecognizer *)recognizer {
-//    self.ListenStatus.text = @"Heard..";
+//    self.someLabel.text = @"Listening...";
 }
 
 - (void)recognizerDidFinishRecording:(SKRecognizer *)recognizer {
-//    self.ListenStatus.text = @"Done..";
+//    self.someLabel.text = @"Done Listening...";
 }
 
 - (void)recognizer:(SKRecognizer *)recognizer didFinishWithResults:(SKRecognition *)results {
@@ -131,7 +130,7 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 
 - (void)recognizer:(SKRecognizer *)recognizer didFinishWithError:(NSError *)error suggestion:(NSString *)suggestion {
     self.ListenButton.selected = NO;
-//    self.ListenStatus.text = @"Error";
+//    self.ListenStatus.text = @"Connection Error";
 //    self.activityIndicator.hidden = YES;
     
     

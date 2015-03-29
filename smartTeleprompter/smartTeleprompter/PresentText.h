@@ -11,16 +11,16 @@
 #import "AppDelegate.h"
 #import <SpeechKit/SpeechKit.h>
 
-int countNumber;
-BOOL paused = true;
 
-@interface PresentText : UIViewController
+
+@interface PresentText : UIViewController <UITextFieldDelegate, SpeechKitDelegate, SKRecognizerDelegate>
 {
     IBOutlet UILabel *TimerDisplay;
     NSTimer *Timer;
+    int countNumber;
+    BOOL paused;
 }
 
-@interface PresentText : UIViewController <UITextFieldDelegate, SpeechKitDelegate, SKRecognizerDelegate>
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) SKRecognizer* voiceSearch;
 

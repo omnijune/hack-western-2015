@@ -140,14 +140,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCZ-H6-eJ4">
-                                <rect key="frame" x="131" y="31" width="58" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-HS-rjY">
-                                <rect key="frame" x="16" y="113" width="288" height="511"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-HS-rjY">
+                                <rect key="frame" x="16" y="65" width="288" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
@@ -174,9 +168,16 @@
                                     <action selector="startListening:" destination="dcK-e9-OZ3" eventType="touchUpInside" id="8cP-As-i4z"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCZ-H6-eJ4">
+                                <rect key="frame" x="131" y="33" width="58" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rCZ-H6-eJ4" firstAttribute="leading" secondItem="q37-jf-56F" secondAttribute="leadingMargin" constant="115" id="0Ue-GW-I9T"/>
                             <constraint firstItem="uXa-MT-YWv" firstAttribute="trailing" secondItem="q37-jf-56F" secondAttribute="trailingMargin" id="3Hk-O1-rQG"/>
                             <constraint firstItem="uXa-MT-YWv" firstAttribute="top" secondItem="Fh4-HS-rjY" secondAttribute="bottom" id="G1M-yH-paz"/>
                             <constraint firstItem="Fh4-HS-rjY" firstAttribute="trailing" secondItem="q37-jf-56F" secondAttribute="trailingMargin" id="OM4-7Q-bDV"/>
@@ -192,14 +193,15 @@
                             <constraint firstItem="uXa-MT-YWv" firstAttribute="leading" secondItem="scz-6u-0ee" secondAttribute="trailing" constant="8" id="fnc-V0-rYB"/>
                             <constraint firstItem="uXa-MT-YWv" firstAttribute="trailing" secondItem="q37-jf-56F" secondAttribute="trailingMargin" id="g2e-5M-Hpf"/>
                             <constraint firstItem="Fh4-HS-rjY" firstAttribute="leading" secondItem="q37-jf-56F" secondAttribute="leadingMargin" id="iL5-cL-qH6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rCZ-H6-eJ4" secondAttribute="trailing" constant="115" id="sep-CJ-Hr1"/>
                             <constraint firstItem="d2k-NM-1c2" firstAttribute="top" secondItem="uXa-MT-YWv" secondAttribute="bottom" constant="10" id="xCG-Bb-Q5B"/>
                             <constraint firstItem="jlV-ax-yrr" firstAttribute="top" secondItem="Vha-ic-H4T" secondAttribute="bottom" id="yYk-no-HcE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6yr-UP-yzL"/>
                     <connections>
-                        <outlet property="TimerDisplay" destination="rCZ-H6-eJ4" id="GLx-Ei-52c"/>
                         <outlet property="ListenButton" destination="uXa-MT-YWv" id="rXw-b3-o5F"/>
+                        <outlet property="TimerDisplay" destination="rCZ-H6-eJ4" id="GLx-Ei-52c"/>
                         <outlet property="spokenText" destination="scz-6u-0ee" id="aPq-7W-xof"/>
                         <outlet property="textView" destination="Fh4-HS-rjY" id="Xn7-XK-7qV"/>
                     </connections>
@@ -228,7 +230,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="play.png" width="140" height="163"/>
+        <image name="play.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
