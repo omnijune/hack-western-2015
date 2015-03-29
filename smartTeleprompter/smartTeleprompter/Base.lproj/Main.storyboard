@@ -165,7 +165,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="Start:" destination="dcK-e9-OZ3" eventType="touchUpInside" id="dan-6j-JcV"/>
-                                                    <action selector="startListening:" destination="dcK-e9-OZ3" eventType="touchUpInside" id="oRl-d6-d6c"/>
                                                 </connections>
                                             </button>
                                             <connections>
@@ -179,8 +178,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rCZ-H6-eJ4" firstAttribute="leading" secondItem="q37-jf-56F" secondAttribute="leadingMargin" constant="115" id="0Ue-GW-I9T"/>
-                            <constraint firstItem="uXa-MT-YWv" firstAttribute="trailing" secondItem="q37-jf-56F" secondAttribute="trailingMargin" id="3Hk-O1-rQG"/>
-                            <constraint firstItem="uXa-MT-YWv" firstAttribute="top" secondItem="Fh4-HS-rjY" secondAttribute="bottom" id="G1M-yH-paz"/>
+                            <constraint firstItem="scz-6u-0ee" firstAttribute="trailing" secondItem="q37-jf-56F" secondAttribute="trailingMargin" id="LGd-ua-p01"/>
                             <constraint firstItem="Fh4-HS-rjY" firstAttribute="trailing" secondItem="q37-jf-56F" secondAttribute="trailingMargin" id="OM4-7Q-bDV"/>
                             <constraint firstItem="jlV-ax-yrr" firstAttribute="leading" secondItem="q37-jf-56F" secondAttribute="leadingMargin" constant="-16" id="SAQ-sJ-lhA"/>
                             <constraint firstItem="Fh4-HS-rjY" firstAttribute="top" secondItem="Vha-ic-H4T" secondAttribute="bottom" constant="45" id="SaT-1S-hV8"/>
@@ -189,19 +187,15 @@
                             <constraint firstAttribute="centerX" secondItem="Fh4-HS-rjY" secondAttribute="centerX" id="bnF-YP-aVZ"/>
                             <constraint firstItem="scz-6u-0ee" firstAttribute="top" secondItem="Fh4-HS-rjY" secondAttribute="bottom" id="cH1-3G-Q9f"/>
                             <constraint firstItem="scz-6u-0ee" firstAttribute="leading" secondItem="q37-jf-56F" secondAttribute="leadingMargin" id="cen-15-rmO"/>
-                            <constraint firstItem="uXa-MT-YWv" firstAttribute="top" secondItem="Fh4-HS-rjY" secondAttribute="bottom" id="cwI-x4-R5p"/>
                             <constraint firstItem="d2k-NM-1c2" firstAttribute="top" secondItem="scz-6u-0ee" secondAttribute="bottom" constant="8" id="dJj-mX-Tin"/>
-                            <constraint firstItem="uXa-MT-YWv" firstAttribute="leading" secondItem="scz-6u-0ee" secondAttribute="trailing" constant="8" id="fnc-V0-rYB"/>
-                            <constraint firstItem="uXa-MT-YWv" firstAttribute="trailing" secondItem="q37-jf-56F" secondAttribute="trailingMargin" id="g2e-5M-Hpf"/>
                             <constraint firstItem="Fh4-HS-rjY" firstAttribute="leading" secondItem="q37-jf-56F" secondAttribute="leadingMargin" id="iL5-cL-qH6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rCZ-H6-eJ4" secondAttribute="trailing" constant="115" id="sep-CJ-Hr1"/>
-                            <constraint firstItem="d2k-NM-1c2" firstAttribute="top" secondItem="uXa-MT-YWv" secondAttribute="bottom" constant="10" id="xCG-Bb-Q5B"/>
                             <constraint firstItem="jlV-ax-yrr" firstAttribute="top" secondItem="Vha-ic-H4T" secondAttribute="bottom" id="yYk-no-HcE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6yr-UP-yzL"/>
                     <connections>
-                        <outlet property="ListenButton" destination="xVY-VH-ENl" id="zSI-Ej-PbS"/>
+                        <outlet property="PlayButton" destination="xVY-VH-ENl" id="1dM-tE-HS9"/>
                         <outlet property="TimerDisplay" destination="rCZ-H6-eJ4" id="GLx-Ei-52c"/>
                         <outlet property="spokenText" destination="scz-6u-0ee" id="aPq-7W-xof"/>
                         <outlet property="textView" destination="Fh4-HS-rjY" id="Xn7-XK-7qV"/>

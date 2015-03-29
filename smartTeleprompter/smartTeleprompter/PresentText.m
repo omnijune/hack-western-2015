@@ -37,6 +37,7 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
     self.appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [self.appDelegate setupSpeechKitConnection];
     paused = true;
+    self.highlightOccurrence = 0;
     self.lastWord = [[NSString alloc] init];
     self.spokenText.returnKeyType = UIReturnKeySearch;
     self.blockBeginIndex =0;
@@ -51,27 +52,34 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 
 - (void) slowScrollText{
     if(self.counter<=self.bottom){
-        [self.textView setContentOffset:CGPointMake(0,self.counter) animated:NO];
-        self.counter+=self.counterIncrement;
-        [self performSelector:@selector(slowScrollText) withObject:nil afterDelay:.08];
+        if (paused==false){
+            [self.textView setContentOffset:CGPointMake(0,self.counter) animated:NO];
+            self.counter+=self.counterIncrement;
+        }
+        [self performSelector:@selector(slowScrollText) withObject:nil afterDelay:.12];
     }
 }
 
 -(void) makeTextBlock{
     NSRange stringR;
+<<<<<<< HEAD
 //    if(self.blockEndIndex == [self.highlightBlock length]-1){
 //        return;
 //    }
+=======
+>>>>>>> highlighting text works!
     [self.highlightBlock beginEditing];
-    if(self.blockBeginIndex !=0){
+    if(self.highlightOccurrence != 0){
         stringR =  NSMakeRange(self.blockBeginIndex, self.blockEndIndex - self.blockBeginIndex + 1);
         [self.highlightBlock removeAttribute:NSBackgroundColorAttributeName range:stringR];
-        for(long i = self.blockBeginIndex+2; i<[self.textView.attributedText length]-1; i++){
+        for(long i = self.blockEndIndex+2; i<[self.textView.attributedText length]; i++){
+            NSLog(@"%@",[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]);
             if([[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]  isEqual: @"."] ||
                [[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]  isEqual: @"?"] ||
                [[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]  isEqual: @"!"]){
                 self.blockBeginIndex =self.blockEndIndex+2;
                 self.blockEndIndex = i;
+                break;
             }
         }
     }else{
@@ -83,14 +91,15 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
                 break;
             }
         }
+        self.highlightOccurrence = 1;
     }
     
-    stringR =  NSMakeRange(0, self.blockEndIndex - self.blockBeginIndex + 1);
+    stringR =  NSMakeRange(self.blockBeginIndex, self.blockEndIndex - self.blockBeginIndex + 1);
     [self.highlightBlock addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:stringR];
     [self.highlightBlock endEditing];
-    self.lastWord = [self.highlightBlock.string componentsSeparatedByString:@" "].lastObject;
-    self.lastWord = [self.lastWord componentsSeparatedByString:@"."].firstObject;
-    NSLog(@"%@", self.lastWord);
+    self.lastWord = [[self.highlightBlock.string substringWithRange:stringR] componentsSeparatedByString:@" "].lastObject;
+    self.lastWord = [[self.lastWord componentsSeparatedByString:@"."].firstObject stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSLog(@"last word: %@", self.lastWord);
     self.textView.attributedText = self.highlightBlock;
 }
 
@@ -106,6 +115,7 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 }
 
 -(IBAction)Start:(id)sender{
+<<<<<<< HEAD
     if (paused == true){
         Timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(TimerCount) userInfo:nil repeats:YES];
         [self slowScrollText];}
@@ -113,7 +123,19 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
         [Timer invalidate];
         paused = true;
     }
+=======
+    if (paused == true) {
+//        paused = false;
+        Timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(TimerCount) userInfo:nil repeats:YES];
+        [self slowScrollText];
+        [self startListening];
+    } else {
+        [Timer invalidate];
+        paused = true;
+>>>>>>> highlighting text works!
     }
+    
+}
 //-(IBAction)Pause:(id)sender{
 //    [Timer invalidate];
 //
@@ -131,11 +153,15 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 
 # pragma mark - SKRecognizer Delegate Methods
 
-- (IBAction)startListening:(id)sender {
-    self.ListenButton.selected = !self.ListenButton.isSelected;
+
+- (void) startListening {
+    
+    self.PlayButton.selected = !self.PlayButton.isSelected;
     
     // This will initialize a new speech recognizer instance
-    if (self.ListenButton.isSelected) {
+    if (self.PlayButton.isSelected) {
+    
+//    while (!paused) {
         self.voiceSearch = [[SKRecognizer alloc] initWithType:SKSearchRecognizerType
                                                     detection:SKShortEndOfSpeechDetection
                                                      language:@"en_US"
@@ -151,6 +177,7 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
     }
 }
 
+
 - (void)recognizerDidBeginRecording:(SKRecognizer *)recognizer {
 //    self.someLabel.text = @"Listening...";
 }
@@ -165,12 +192,14 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
     if (numOfResults > 0) {
         // update the text of text field with best result from SpeechKit
         self.spokenText.text = [results firstResult];
-        if ([self.spokenText.text rangeOfString:self.lastWord].location != NSNotFound) {
+        NSLog(@"print word %@", [self.spokenText.text lowercaseString]);
+        if ([[self.spokenText.text lowercaseString] rangeOfString:self.lastWord].location != NSNotFound) {
+            NSLog(@"substring match");
             [self makeTextBlock];
         }
     }
     
-    self.ListenButton.selected = !self.ListenButton.isSelected;
+    self.PlayButton.selected = !self.PlayButton.isSelected;
     
     if (self.voiceSearch) {
         [self.voiceSearch cancel];
@@ -178,7 +207,7 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 }
 
 - (void)recognizer:(SKRecognizer *)recognizer didFinishWithError:(NSError *)error suggestion:(NSString *)suggestion {
-    self.ListenButton.selected = NO;
+    self.PlayButton.selected = NO;
 //    self.ListenStatus.text = @"Connection Error";
 //    self.activityIndicator.hidden = YES;
     
