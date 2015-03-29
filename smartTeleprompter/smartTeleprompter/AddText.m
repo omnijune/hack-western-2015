@@ -39,7 +39,8 @@
 
 // MY CODE
 - (IBAction)unwindToAdd:(UIStoryboardSegue *)segue {
-    
+//    countNumber = 0;
+//    paused = TRUE;
 }
 
 - (void)saveText: (UITextView *) textView

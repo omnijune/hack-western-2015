@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SpeechTranscript.h"
 
-
+int countNumber;
+BOOL paused = true;
 
 @interface PresentText : UIViewController
 {
