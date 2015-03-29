@@ -9,6 +9,9 @@
 #import "PresentText.h"
 #import "AddText.h"
 
+int countNumber;
+BOOL paused = TRUE;
+
 
 @interface PresentText ()
 
@@ -16,7 +19,14 @@
 
 @implementation PresentText
 
+-(void)TimerCount{
+    countNumber = countNumber +1;
+    TimerDisplay.text = [NSString stringWithFormat:@"%i", countNumber];
+}
+
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
+    //self.countNumber = 0;
+    //self.paused = TRUE;
     
 }
 
@@ -33,6 +43,14 @@
     }
 }
 
+-(IBAction)Start:(id)sender{
+    NSLog(@";askjdklgalksndfa");
+    Timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(TimerCount) userInfo:nil repeats:YES];
+}
+//-(IBAction)Pause:(id)sender{
+//    [Timer invalidate];
+//    
+//}
 
 
 -(void) viewDidAppear:(BOOL) animated {

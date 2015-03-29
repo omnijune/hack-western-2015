@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SpeechTranscript.h"
 
+
+
 @interface ViewController : UIViewController
 
 //start function
