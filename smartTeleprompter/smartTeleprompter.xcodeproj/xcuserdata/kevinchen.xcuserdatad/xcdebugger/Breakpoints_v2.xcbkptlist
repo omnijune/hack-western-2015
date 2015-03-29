@@ -10,18 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "smartTeleprompter/PresentText.m"
-            timestampString = "449296449.221588"
+            timestampString = "449314944.814168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "-TimerCount"
-=======
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-viewDidLoad"
->>>>>>> highlight all text on GO!
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-makeTextBlock"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -32,18 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "smartTeleprompter/PresentText.m"
-            timestampString = "449296449.221588"
+            timestampString = "449314944.814168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-unwindToList:"
-=======
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-slowScrollText"
->>>>>>> highlight all text on GO!
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-makeTextBlock"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -54,18 +42,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "smartTeleprompter/PresentText.m"
-            timestampString = "449296449.221588"
+            timestampString = "449314944.814168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-TimerCount"
-=======
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-slowScrollText"
->>>>>>> highlight all text on GO!
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "-makeTextBlock"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "smartTeleprompter/PresentText.m"
+            timestampString = "449314944.814168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-makeTextBlock"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "smartTeleprompter/PresentText.m"
+            timestampString = "449314944.814168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "-recognizer:didFinishWithResults:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "smartTeleprompter/PresentText.m"
+            timestampString = "449314944.814168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "-recognizer:didFinishWithResults:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

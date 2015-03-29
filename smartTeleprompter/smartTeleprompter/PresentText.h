@@ -40,6 +40,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *ListenButton;
 - (IBAction)startListening:(id)sender;
 @property (nonatomic) NSMutableAttributedString *highlightBlock;
-@property (nonatomic) NSRange *stringRange;
+@property (nonatomic) NSString *lastWord;
+-(void)TimerCount;
+-(IBAction)Start:(id)sender;
+//-(IBAction)Pause:(id)sender;
 @end
 

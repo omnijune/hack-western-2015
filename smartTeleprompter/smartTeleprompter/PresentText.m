@@ -37,58 +37,82 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
     self.appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [self.appDelegate setupSpeechKitConnection];
     paused = true;
+    self.lastWord = [[NSString alloc] init];
     self.spokenText.returnKeyType = UIReturnKeySearch;
     self.blockBeginIndex =0;
-    self.blockEndIndex =[self.textView.text length]-1;
-    self.counterIncrement = 4;
+    self.blockEndIndex =[self.speech.transcript length]-1;
+    self.counterIncrement = 2;
     self.highlightBlock = [[NSMutableAttributedString alloc] initWithString:self.speech.transcript];
-    [self.highlightBlock beginEditing];
-    NSRange stringR =  NSMakeRange(0, self.highlightBlock.length);
-    [self.highlightBlock addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:stringR];
-    [self.highlightBlock endEditing];
-    self.textView.attributedText = self.highlightBlock;
+    NSRange stringR =  NSMakeRange(0, [self.speech.transcript length]);
+    [self.highlightBlock addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica Neue" size:26.0] range:stringR];
+    [self makeTextBlock];
+    
 }
 
 - (void) slowScrollText{
     if(self.counter<=self.bottom){
         [self.textView setContentOffset:CGPointMake(0,self.counter) animated:NO];
         self.counter+=self.counterIncrement;
-        [self performSelector:@selector(slowScrollText) withObject:nil afterDelay:.1];
+        [self performSelector:@selector(slowScrollText) withObject:nil afterDelay:.08];
     }
 }
 
 -(void) makeTextBlock{
+    NSRange stringR;
+    if(self.blockEndIndex == [self.highlightBlock length]-1){
+        return;
+    }
     [self.highlightBlock beginEditing];
-    NSRange stringR =  NSMakeRange(self.blockBeginIndex, self.blockBeginIndex + self.blockEndIndex);
-    [self.highlightBlock removeAttribute:NSBackgroundColorAttributeName range:stringR];
     if(self.blockBeginIndex !=0){
-        for(long i = self.blockBeginIndex+2; i<[self.textView.text length]-1; i++){
-            if([[self.textView.text substringWithRange:NSMakeRange(i, i)]  isEqual: @"."] ||
-               [[self.textView.text substringWithRange:NSMakeRange(i, i)]  isEqual: @"?"] ||
-               [[self.textView.text substringWithRange:NSMakeRange(i, i)]  isEqual: @"!"]){
-                self.blockBeginIndex +=2;
+        stringR =  NSMakeRange(self.blockBeginIndex, self.blockEndIndex - self.blockBeginIndex + 1);
+        [self.highlightBlock removeAttribute:NSBackgroundColorAttributeName range:stringR];
+        for(long i = self.blockBeginIndex+2; i<[self.textView.attributedText length]-1; i++){
+            if([[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]  isEqual: @"."] ||
+               [[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]  isEqual: @"?"] ||
+               [[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]  isEqual: @"!"]){
+                self.blockBeginIndex =self.blockEndIndex+2;
                 self.blockEndIndex = i;
+            }
+        }
+    }else{
+        for(long i = self.blockBeginIndex; i<[self.speech.transcript length]; i++){
+            if([[self.speech.transcript substringWithRange:NSMakeRange(i, 1)]  isEqual: @"."] ||
+               [[self.speech.transcript substringWithRange:NSMakeRange(i, 1)]  isEqual: @"?"] ||
+               [[self.speech.transcript substringWithRange:NSMakeRange(i, 1)]  isEqual: @"!"]){
+                self.blockEndIndex = i;
+                break;
             }
         }
     }
     
-    stringR =  NSMakeRange(self.blockBeginIndex, self.blockBeginIndex + self.blockEndIndex);
+    stringR =  NSMakeRange(0, self.blockEndIndex - self.blockBeginIndex + 1);
     [self.highlightBlock addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:stringR];
     [self.highlightBlock endEditing];
+    self.lastWord = [self.highlightBlock.string componentsSeparatedByString:@" "].lastObject;
+    self.lastWord = [self.lastWord componentsSeparatedByString:@"."].firstObject;
+    NSLog(@"%@", self.lastWord);
+    self.textView.attributedText = self.highlightBlock;
 }
 
 
 - (void) viewDidAppear:(BOOL) animated {
     [super viewDidAppear:animated];
     self.bottom =[self.textView contentSize].height+200;
-
-    [self slowScrollText];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(IBAction)Start:(id)sender{
+        Timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(TimerCount) userInfo:nil repeats:YES];
+    [self slowScrollText];
+    }
+//-(IBAction)Pause:(id)sender{
+//    [Timer invalidate];
+//
+//}
 
 /*
 #pragma mark - Navigation
@@ -136,6 +160,9 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
     if (numOfResults > 0) {
         // update the text of text field with best result from SpeechKit
         self.spokenText.text = [results firstResult];
+        if ([self.spokenText.text rangeOfString:self.lastWord].location != NSNotFound) {
+            [self makeTextBlock];
+        }
     }
     
     self.ListenButton.selected = !self.ListenButton.isSelected;
