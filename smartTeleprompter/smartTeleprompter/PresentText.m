@@ -62,16 +62,24 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 
 -(void) makeTextBlock{
     NSRange stringR;
+    BOOL beginFound = false;
     [self.highlightBlock beginEditing];
     if(self.highlightOccurrence != 0){
         stringR =  NSMakeRange(self.blockBeginIndex, self.blockEndIndex - self.blockBeginIndex + 1);
         [self.highlightBlock removeAttribute:NSBackgroundColorAttributeName range:stringR];
         for(long i = self.blockEndIndex+2; i<[self.textView.attributedText length]; i++){
             NSLog(@"%@",[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]);
+            
+            if(![[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]  isEqual: @" "] &&
+               ![[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]  isEqual: @"\n"] &&
+               !beginFound){
+                self.blockBeginIndex =i;
+                beginFound = true;
+            }
+            
             if([[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]  isEqual: @"."] ||
                [[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]  isEqual: @"?"] ||
                [[self.highlightBlock.string substringWithRange:NSMakeRange(i, 1)]  isEqual: @"!"]){
-                self.blockBeginIndex =self.blockEndIndex+2;
                 self.blockEndIndex = i;
                 break;
             }
