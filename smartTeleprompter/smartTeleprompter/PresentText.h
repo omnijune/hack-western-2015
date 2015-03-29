@@ -27,17 +27,19 @@
 @property (nonatomic, retain) IBOutlet UITextView* textView;
 @property (nonatomic, retain) IBOutlet UILabel* speechTranscriptBig;
 @property (nonatomic, assign) int counter;
+@property (nonatomic, assign) int counterIncrement;
+@property (nonatomic, assign) long blockBeginIndex;
+@property (nonatomic, assign) long blockEndIndex;
 @property (nonatomic, assign) CGFloat bottom;
 @property (nonatomic) SpeechTranscript * speech;
 //@property (nonatomic, assign) IBOutlet UILabel *TimerDisplay;
 //@property (nonatomic, retain) NSTimer *Timer;
 
 -(IBAction)unwindToList:(UIStoryboardSegue *)segue;
-
 @property (weak, nonatomic) IBOutlet UITextField *spokenText;
 @property (weak, nonatomic) IBOutlet UIButton *ListenButton;
 - (IBAction)startListening:(id)sender;
-
-
+@property (nonatomic) NSMutableAttributedString *highlightBlock;
+@property (nonatomic) NSRange *stringRange;
 @end
 

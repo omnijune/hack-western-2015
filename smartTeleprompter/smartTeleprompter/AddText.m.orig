@@ -77,6 +77,12 @@
     PresentText *dest = [segue destinationViewController];
     dest.speech = [[SpeechTranscript alloc] init];
     dest.speech.transcript = self.textView.text;
+<<<<<<< HEAD
+    
+    NSLog(@"%@",self.textView.text);
+    NSLog(@"%@",dest.speech.transcript);
+=======
+>>>>>>> highlight all text on GO!
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

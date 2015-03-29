@@ -34,10 +34,14 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
+    self.textView.text = self.speech.transcript;
+    NSLog(@"%@", self.speech.transcript);
     self.appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [self.appDelegate setupSpeechKitConnection];
     paused = true;
     self.spokenText.returnKeyType = UIReturnKeySearch;
+=======
     self.blockBeginIndex =0;
     self.blockEndIndex =[self.textView.text length]-1;
     self.counterIncrement = 4;
@@ -47,6 +51,7 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
     [self.highlightBlock addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:stringR];
     [self.highlightBlock endEditing];
     self.textView.attributedText = self.highlightBlock;
+>>>>>>> highlight all text on GO!
 }
 
 - (void) slowScrollText{
@@ -57,6 +62,16 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
     }
 }
 
+<<<<<<< HEAD
+- (IBAction)Start:(id)sender{
+    if (paused == true){
+        NSLog(@"alsfjasdjfaldfjas");
+        Timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(TimerCount) userInfo:nil repeats:YES];}
+    else {
+        [Timer invalidate];
+        paused = true;
+    }
+=======
 -(void) makeTextBlock{
     [self.highlightBlock beginEditing];
     NSRange stringR =  NSMakeRange(self.blockBeginIndex, self.blockBeginIndex + self.blockEndIndex);
@@ -75,6 +90,7 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
     stringR =  NSMakeRange(self.blockBeginIndex, self.blockBeginIndex + self.blockEndIndex);
     [self.highlightBlock addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:stringR];
     [self.highlightBlock endEditing];
+>>>>>>> highlight all text on GO!
 }
 
 

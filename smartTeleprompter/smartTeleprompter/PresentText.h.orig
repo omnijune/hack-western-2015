@@ -11,25 +11,25 @@
 #import "AppDelegate.h"
 #import <SpeechKit/SpeechKit.h>
 
+
+
 @interface PresentText : UIViewController <UITextFieldDelegate, SpeechKitDelegate, SKRecognizerDelegate>
-@property (strong, nonatomic) AppDelegate *appDelegate;
-@property (strong, nonatomic) SKRecognizer* voiceSearch;
-
-<<<<<<< HEAD
-int countNumber;
-BOOL paused = true;
-
-@interface PresentText : UIViewController
 {
     IBOutlet UILabel *TimerDisplay;
     NSTimer *Timer;
+    int countNumber;
+    BOOL paused;
 }
 
-=======
->>>>>>> Speech recognition
+@property (strong, nonatomic) AppDelegate *appDelegate;
+@property (strong, nonatomic) SKRecognizer* voiceSearch;
+
 @property (nonatomic, retain) IBOutlet UITextView* textView;
 @property (nonatomic, retain) IBOutlet UILabel* speechTranscriptBig;
 @property (nonatomic, assign) int counter;
+@property (nonatomic, assign) int counterIncrement;
+@property (nonatomic, assign) long blockBeginIndex;
+@property (nonatomic, assign) long blockEndIndex;
 @property (nonatomic, assign) CGFloat bottom;
 @property (nonatomic) SpeechTranscript * speech;
 //@property (nonatomic, assign) IBOutlet UILabel *TimerDisplay;
@@ -37,16 +37,15 @@ BOOL paused = true;
 
 -(IBAction)unwindToList:(UIStoryboardSegue *)segue;
 <<<<<<< HEAD
--(void)TimerCount;
--(IBAction)Start:(id)sender;
-//-(IBAction)Pause:(id)sender;
-=======
 
 @property (weak, nonatomic) IBOutlet UITextField *spokenText;
 @property (weak, nonatomic) IBOutlet UIButton *ListenButton;
 - (IBAction)startListening:(id)sender;
->>>>>>> Speech recognition
 
 
+=======
+@property (nonatomic) NSMutableAttributedString *highlightBlock;
+@property (nonatomic) NSRange *stringRange;
+>>>>>>> highlight all text on GO!
 @end
 
