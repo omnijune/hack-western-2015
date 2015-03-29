@@ -59,9 +59,9 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 
 -(void) makeTextBlock{
     NSRange stringR;
-    if(self.blockEndIndex == [self.highlightBlock length]-1){
-        return;
-    }
+//    if(self.blockEndIndex == [self.highlightBlock length]-1){
+//        return;
+//    }
     [self.highlightBlock beginEditing];
     if(self.blockBeginIndex !=0){
         stringR =  NSMakeRange(self.blockBeginIndex, self.blockEndIndex - self.blockBeginIndex + 1);
@@ -106,8 +106,13 @@ const unsigned char SpeechKitApplicationKey[] = {0xa9, 0x98, 0x96, 0x0e, 0x28, 0
 }
 
 -(IBAction)Start:(id)sender{
+    if (paused == true){
         Timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(TimerCount) userInfo:nil repeats:YES];
-    [self slowScrollText];
+        [self slowScrollText];}
+    else{
+        [Timer invalidate];
+        paused = true;
+    }
     }
 //-(IBAction)Pause:(id)sender{
 //    [Timer invalidate];

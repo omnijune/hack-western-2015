@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA55F26E1AC79E8800314248 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CA55F26D1AC79E8800314248 /* play.png */; };
+		CAF1D9EE1AC829AF00626BEF /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF1D9ED1AC829AF00626BEF /* play.png */; };
 		D429C8871AC6C0BE003D45EF /* AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C8861AC6C0BE003D45EF /* AddText.m */; };
 		D429C88A1AC6C0F2003D45EF /* PresentText.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C8891AC6C0F2003D45EF /* PresentText.m */; };
 		D4A2E2F61AC7E77F00489F0C /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A2E2F51AC7E77F00489F0C /* SpeechKit.framework */; };
@@ -42,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CA55F26D1AC79E8800314248 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = Images.xcassets/play.png; sourceTree = "<group>"; };
+		CAF1D9ED1AC829AF00626BEF /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = SOURCE_ROOT; };
 		D429C8851AC6C0BE003D45EF /* AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddText.h; sourceTree = "<group>"; };
 		D429C8861AC6C0BE003D45EF /* AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddText.m; sourceTree = "<group>"; };
 		D429C8881AC6C0F2003D45EF /* PresentText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentText.h; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		E204EF671AC68203001AB4C4 /* smartTeleprompter */ = {
 			isa = PBXGroup;
 			children = (
-				CA55F26D1AC79E8800314248 /* play.png */,
+				CAF1D9ED1AC829AF00626BEF /* play.png */,
 				E204EF6C1AC68204001AB4C4 /* AppDelegate.h */,
 				E204EF6D1AC68204001AB4C4 /* AppDelegate.m */,
 				E204EF6F1AC68204001AB4C4 /* ViewController.h */,
@@ -261,7 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E204EF741AC68204001AB4C4 /* Main.storyboard in Resources */,
-				CA55F26E1AC79E8800314248 /* play.png in Resources */,
+				CAF1D9EE1AC829AF00626BEF /* play.png in Resources */,
 				E204EF791AC68204001AB4C4 /* LaunchScreen.xib in Resources */,
 				D4B3C0D11AC7748D00C7A1A7 /* earcon_done_listening.wav in Resources */,
 				D4B3C0D01AC7748D00C7A1A7 /* earcon_cancel.wav in Resources */,
