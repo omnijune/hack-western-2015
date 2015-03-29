@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,16 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="eor-Y5-nGW">
-                                <rect key="frame" x="36" y="126" width="248" height="350"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="eor-Y5-nGW">
+                                <rect key="frame" x="36" y="150" width="248" height="326.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.84868213380000002" green="0.28469430979999999" blue="0.38396011470000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85c-W0-1il">
-                                <rect key="frame" x="131" y="80" width="58" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85c-W0-1il">
+                                <rect key="frame" x="131" y="111" width="58" height="30"/>
                                 <state key="normal" title="Clear All">
                                     <color key="titleColor" red="0.84868213380000002" green="0.28469430979999999" blue="0.38396011470000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,8 +35,8 @@
                                     <action selector="Clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j25-Vp-ocQ"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uH7-Tk-Zn3">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uH7-Tk-Zn3">
+                                <rect key="frame" x="0.0" y="19" width="320" height="44"/>
                                 <color key="tintColor" red="0.84868213380000002" green="0.28469430979999999" blue="0.38396011470000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
@@ -45,15 +45,15 @@
                                     <navigationItem title="Live Prompt" id="pNq-Ab-onp"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-c3-93D">
-                                <rect key="frame" x="101" y="506" width="118" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-c3-93D">
+                                <rect key="frame" x="101" y="508" width="118" height="30"/>
                                 <color key="backgroundColor" red="0.84868213380000002" green="0.28469430979999999" blue="0.38396011470000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Go!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dcK-e9-OZ3" kind="custom" id="gIU-xG-ywi"/>
+                                    <segue destination="dcK-e9-OZ3" kind="custom" id="5KL-Gy-mY2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,7 +76,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="saveText" destination="fOp-c3-93D" id="QfO-aw-Itw"/>
+                        <outlet property="saveText" destination="fOp-c3-93D" id="6B8-AY-Rj8"/>
                         <outlet property="textView" destination="eor-Y5-nGW" id="Mr9-2i-fxK"/>
                     </connections>
                 </viewController>
@@ -153,54 +153,24 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Say something..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="scz-6u-0ee">
-                                <rect key="frame" x="16" y="526" width="210" height="34"/>
-                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXa-MT-YWv">
-                                <rect key="frame" x="234" y="526" width="70" height="32"/>
-                                <color key="backgroundColor" red="0.84868213380000002" green="0.28469430979999999" blue="0.38396011470000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="syz-tl-ycx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="Listen">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startListening:" destination="dcK-e9-OZ3" eventType="touchUpInside" id="8cP-As-i4z"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uXa-MT-YWv" firstAttribute="trailing" secondItem="q37-jf-56F" secondAttribute="trailingMargin" id="3Hk-O1-rQG"/>
-                            <constraint firstItem="uXa-MT-YWv" firstAttribute="top" secondItem="Fh4-HS-rjY" secondAttribute="bottom" id="G1M-yH-paz"/>
+                            <constraint firstItem="d2k-NM-1c2" firstAttribute="top" secondItem="Fh4-HS-rjY" secondAttribute="bottom" constant="14" id="JUm-jm-nrQ"/>
                             <constraint firstItem="Fh4-HS-rjY" firstAttribute="trailing" secondItem="q37-jf-56F" secondAttribute="trailingMargin" id="OM4-7Q-bDV"/>
                             <constraint firstItem="jlV-ax-yrr" firstAttribute="leading" secondItem="q37-jf-56F" secondAttribute="leadingMargin" constant="-16" id="SAQ-sJ-lhA"/>
                             <constraint firstItem="Fh4-HS-rjY" firstAttribute="top" secondItem="Vha-ic-H4T" secondAttribute="bottom" constant="45" id="SaT-1S-hV8"/>
                             <constraint firstItem="rCZ-H6-eJ4" firstAttribute="top" secondItem="Vha-ic-H4T" secondAttribute="bottom" constant="13" id="Vhj-Is-exl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jlV-ax-yrr" secondAttribute="trailing" constant="-16" id="YIZ-RW-F1c"/>
                             <constraint firstAttribute="centerX" secondItem="Fh4-HS-rjY" secondAttribute="centerX" id="bnF-YP-aVZ"/>
-                            <constraint firstItem="scz-6u-0ee" firstAttribute="top" secondItem="Fh4-HS-rjY" secondAttribute="bottom" id="cH1-3G-Q9f"/>
-                            <constraint firstItem="scz-6u-0ee" firstAttribute="leading" secondItem="q37-jf-56F" secondAttribute="leadingMargin" id="cen-15-rmO"/>
-                            <constraint firstItem="uXa-MT-YWv" firstAttribute="top" secondItem="Fh4-HS-rjY" secondAttribute="bottom" id="cwI-x4-R5p"/>
-                            <constraint firstItem="d2k-NM-1c2" firstAttribute="top" secondItem="scz-6u-0ee" secondAttribute="bottom" constant="8" id="dJj-mX-Tin"/>
-                            <constraint firstItem="uXa-MT-YWv" firstAttribute="leading" secondItem="scz-6u-0ee" secondAttribute="trailing" constant="8" id="fnc-V0-rYB"/>
-                            <constraint firstItem="uXa-MT-YWv" firstAttribute="trailing" secondItem="q37-jf-56F" secondAttribute="trailingMargin" id="g2e-5M-Hpf"/>
                             <constraint firstItem="Fh4-HS-rjY" firstAttribute="leading" secondItem="q37-jf-56F" secondAttribute="leadingMargin" id="iL5-cL-qH6"/>
-                            <constraint firstItem="d2k-NM-1c2" firstAttribute="top" secondItem="uXa-MT-YWv" secondAttribute="bottom" constant="10" id="xCG-Bb-Q5B"/>
+                            <constraint firstAttribute="centerX" secondItem="rCZ-H6-eJ4" secondAttribute="centerX" id="iZb-UO-Xmg"/>
                             <constraint firstItem="jlV-ax-yrr" firstAttribute="top" secondItem="Vha-ic-H4T" secondAttribute="bottom" id="yYk-no-HcE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6yr-UP-yzL"/>
                     <connections>
                         <outlet property="TimerDisplay" destination="rCZ-H6-eJ4" id="GLx-Ei-52c"/>
-                        <outlet property="ListenButton" destination="uXa-MT-YWv" id="rXw-b3-o5F"/>
-                        <outlet property="spokenText" destination="scz-6u-0ee" id="aPq-7W-xof"/>
                         <outlet property="textView" destination="Fh4-HS-rjY" id="Xn7-XK-7qV"/>
                     </connections>
                 </viewController>

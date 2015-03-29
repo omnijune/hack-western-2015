@@ -9,14 +9,18 @@
 #import "AddText.h"
 #import "SpeechTranscript.h"
 #import "PresentText.h"
+//#import "AppDelegate.h"
+//#import <AVFoundation/AVAudioPlayer.h>
+//#import <AudioToolbox/AudioToolbox.h>
 
-@interface AddText ()<UITextViewDelegate>
+@interface AddText () <UITextViewDelegate>
 
 // MY CODE
 
 
 
 @end
+
 
 @implementation AddText
 
@@ -29,7 +33,6 @@
     self.textView.delegate = self;
     self.textView.text = @"Paste your speech here.";
     self.textView.textColor = [UIColor lightGrayColor];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +48,8 @@
 
 - (void)saveText: (UITextView *) textView
 {}
+
+
 
 // for the placeholder text for UItextview
 
@@ -75,14 +80,14 @@
     dest.speech = [[SpeechTranscript alloc] init];
     dest.speech.transcript = self.textView.text;
     
-    NSLog(@"%@",self.myTranscript.transcript);
+    NSLog(@"%@",self.textView.text);
     NSLog(@"%@",dest.speech.transcript);
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
-
 - (IBAction)Clear:(UIButton *)sender {
     self.textView.text=@"";
 }
+
+
 @end

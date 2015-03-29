@@ -96,12 +96,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJT-1L-Iyc">
-                                <rect key="frame" x="142" y="31" width="36" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlV-ax-yrr">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <color key="tintColor" red="0.84868213380000002" green="0.28469430979999999" blue="0.38396011470000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -120,34 +114,11 @@
                                                 </connections>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="bhE-Pn-GdZ">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xVY-VH-ENl">
-                                                <rect key="frame" x="261" y="195" width="22" height="26"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" backgroundImage="play.png">
-                                                    <color key="titleColor" red="0.84868213380000002" green="0.28469430979999999" blue="0.38396011470000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="Start:" destination="dcK-e9-OZ3" eventType="touchUpInside" id="xUN-Do-Dw9"/>
-                                                </connections>
-                                            </button>
-                                            <color key="tintColor" red="0.84868213380000002" green="0.28469430979999999" blue="0.38396011470000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="Start:" destination="dcK-e9-OZ3" id="W8I-ST-dZ3"/>
-                                            </connections>
-                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCZ-H6-eJ4">
-                                <rect key="frame" x="131" y="31" width="58" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-HS-rjY">
-                                <rect key="frame" x="16" y="113" width="288" height="511"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-HS-rjY">
+                                <rect key="frame" x="16" y="65" width="288" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
@@ -182,7 +153,6 @@
                             <constraint firstItem="Fh4-HS-rjY" firstAttribute="trailing" secondItem="q37-jf-56F" secondAttribute="trailingMargin" id="OM4-7Q-bDV"/>
                             <constraint firstItem="jlV-ax-yrr" firstAttribute="leading" secondItem="q37-jf-56F" secondAttribute="leadingMargin" constant="-16" id="SAQ-sJ-lhA"/>
                             <constraint firstItem="Fh4-HS-rjY" firstAttribute="top" secondItem="Vha-ic-H4T" secondAttribute="bottom" constant="45" id="SaT-1S-hV8"/>
-                            <constraint firstItem="rCZ-H6-eJ4" firstAttribute="top" secondItem="Vha-ic-H4T" secondAttribute="bottom" constant="13" id="Vhj-Is-exl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jlV-ax-yrr" secondAttribute="trailing" constant="-16" id="YIZ-RW-F1c"/>
                             <constraint firstAttribute="centerX" secondItem="Fh4-HS-rjY" secondAttribute="centerX" id="bnF-YP-aVZ"/>
                             <constraint firstItem="scz-6u-0ee" firstAttribute="top" secondItem="Fh4-HS-rjY" secondAttribute="bottom" id="cH1-3G-Q9f"/>
@@ -198,7 +168,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="6yr-UP-yzL"/>
                     <connections>
-                        <outlet property="TimerDisplay" destination="rCZ-H6-eJ4" id="GLx-Ei-52c"/>
                         <outlet property="ListenButton" destination="uXa-MT-YWv" id="rXw-b3-o5F"/>
                         <outlet property="spokenText" destination="scz-6u-0ee" id="aPq-7W-xof"/>
                         <outlet property="textView" destination="Fh4-HS-rjY" id="Xn7-XK-7qV"/>
@@ -209,27 +178,7 @@
             </objects>
             <point key="canvasLocation" x="1354" y="319"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ulL-3a-12T">
-            <objects>
-                <viewController id="mD2-YV-NFh" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="m3Z-Uw-QnL"/>
-                        <viewControllerLayoutGuide type="bottom" id="bb9-lg-API"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="awO-ao-rDP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mKw-bj-x1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
-    <resources>
-        <image name="play.png" width="140" height="163"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

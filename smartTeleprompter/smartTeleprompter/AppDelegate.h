@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SpeechKit/SpeechKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+//- (void)updateCurrentLocation;
+//- (void)stopUpdatingCurrentLocation;
+- (void)setupSpeechKitConnection;
 
 
 @end

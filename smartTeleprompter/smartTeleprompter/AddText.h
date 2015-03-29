@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "SpeechTranscript.h"
+//#import "AppDelegate.h"
 
 @interface AddText : UIViewController
+
 @property (nonatomic) SpeechTranscript* myTranscript;
+
 // MY CODE
 - (IBAction)unwindToAdd:(UIStoryboardSegue *)segue;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIButton *saveText;
+
+
 - (IBAction)Clear:(UIButton *)sender;
 @end
