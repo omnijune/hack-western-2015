@@ -42,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CA55F26D1AC79E8800314248 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = "/Users/Flora/hack-western-2015/smartTeleprompter/smartTeleprompter/play.png"; sourceTree = "<absolute>"; };
+		CA55F26D1AC79E8800314248 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = Images.xcassets/play.png; sourceTree = "<group>"; };
 		D429C8851AC6C0BE003D45EF /* AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddText.h; sourceTree = "<group>"; };
 		D429C8861AC6C0BE003D45EF /* AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddText.m; sourceTree = "<group>"; };
 		D429C8881AC6C0F2003D45EF /* PresentText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentText.h; sourceTree = "<group>"; };
